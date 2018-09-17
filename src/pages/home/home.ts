@@ -11,8 +11,19 @@ import {Dish} from '../../shared/dish';
 })
 export class HomePage implements OnInit{
 
-  constructor(public navCtrl: NavController) {
+	dish: Dish;
 
-  }
+  constructor(
+  	public navCtrl: NavController) {
+  	private dishService: DishProvider,
+  	@Inject('DbURL') private DbURL
+  	getFeaturedDish({
+  		this.dishService
+  		.getFeaturedDish()
+  		
 
+  	})
+ }
+
+}
 }

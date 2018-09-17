@@ -16,6 +16,8 @@ import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
 
+
+import {dbURL} from '../shared/dburl1';
 import {HttpClientModule} from '@angular/common/http';
 
 
@@ -49,6 +51,7 @@ import {HttpClientModule} from '@angular/common/http';
     DishProvider,
     LeaderProvider,
     PromotionProvider
+    {provide: 'DbURL', useValue: dbURL}
   ]
 })
 export class AppModule {}
