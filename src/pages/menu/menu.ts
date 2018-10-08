@@ -14,8 +14,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'menu.html',
 })
 export class MenuPage {
+	dishes: Dish[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+  	public navCtrl: NavController, public navParams: NavParams
+ 	this.getFeaturedDishes();
+ 	) {
+
+  	 ngOnInit(){
+    this.getDishes();
+  }
+  getDishes(){
+    this.dishService
+    .getFeaturedDishes()
+    .subscribe(
+      response => {
+        this.dish=response[0];
+        console.log(this.dish);
+      }
+    );
   }
 
   ionViewDidLoad() {

@@ -1,7 +1,7 @@
 
 //Creamos la interface dish (otro archivo dish.ts) y la escribimos
 
-import {Comment}from'./comment.ts';
+import {Comment} from'./comment.ts';
 
 export interface Dish{
 	id: number;

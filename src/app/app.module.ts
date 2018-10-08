@@ -17,7 +17,7 @@ import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
 
 
-import {dbURL} from '../shared/dburl1';
+import {dbURL} from '../shared/dburl';
 import {HttpClientModule} from '@angular/common/http';
 
 
@@ -50,7 +50,7 @@ import {HttpClientModule} from '@angular/common/http';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DishProvider,
     LeaderProvider,
-    PromotionProvider
+    PromotionProvider,
     {provide: 'DbURL', useValue: dbURL}
   ]
 })

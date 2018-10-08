@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {dbURL} from '../../shared/dburl1'
+import {dbURL} from '../../shared/dburl';
 import {Dish} from '../../shared/dish';
 
 
@@ -19,15 +19,15 @@ export class DishProvider {
     console.log('Hello DishProvider Provider');
   }
 
-getDishes(): Observable<Dish[]>{
-	return this.http.get<Dish[]>(dbURL + 'dishes').map(
-		res => res
-		);
-}
+  getDishes(): Observable<Dish[]>{
+  	return this.http.get<Dish[]>(dbURL + 'dishes').map(
+  		res => res
+  	);
+  }
 
-getFeaturedDish(): Observable<Dish>{
-	return this.http.get<Dish>(dbURL + 'dishes?featured=').map(
-res => red
-);
-}
+  getFeaturedDish(): Observable<Dish>{
+  	return this.http.get<Dish>(dbURL + 'dishes?featured=true').map(
+      res => res
+    );
+  }
 }

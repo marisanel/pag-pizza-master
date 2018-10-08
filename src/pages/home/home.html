@@ -9,4 +9,43 @@
 
 <ion-content padding>
 
+	<ion-card *ngIf="dish">
+		<img src="{{DbURL + dish.image}}">
+		<ion-card-content>
+			<ion-card-title>
+				{{dish.name}}
+			</ion-card-title>
+			<p>
+				{{dish.description}}
+
+			</p>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card *ngIf="promotion">
+		<img src="{{DbURL + promotion.image}}">
+		<ion-card-content>
+			<ion-card-title>
+				{{promotion.name}}
+			</ion-card-title>
+			<p>
+				{{promotion.description}}
+				
+			</p>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card *ngIf="leader">
+		<img src="{{DbURL + leader.image}}">
+		<ion-card-content>
+			<ion-card-title>
+				{{leader.name}}
+			</ion-card-title>
+			<p>
+				{{leader.abbr}}
+				
+			</p>
+		</ion-card-content>
+	</ion-card>
+
 </ion-content>
