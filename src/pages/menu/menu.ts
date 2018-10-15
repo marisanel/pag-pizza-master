@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { DishProvider} from "../../providers/dish/dish";
+import { Dish } from "../../shared/dish";
 /**
  * Generated class for the MenuPage page.
  *
@@ -13,24 +14,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-menu',
   templateUrl: 'menu.html',
 })
-export class MenuPage {
+export class MenuPage implements OnInit{
 	dishes: Dish[];
 
   constructor(
-  	public navCtrl: NavController, public navParams: NavParams
- 	this.getFeaturedDishes();
+  	public navCtrl: NavController, public navParams: NavParams, public dishService: DishProvider,
  	) {
+       }
 
-  	 ngOnInit(){
+   ngOnInit(){
     this.getDishes();
-  }
+      }
+
   getDishes(){
     this.dishService
-    .getFeaturedDishes()
+    .getDishes()
     .subscribe(
       response => {
-        this.dish=response[0];
-        console.log(this.dish);
+        this.dishes=response;
+        console.log(this.dishes);
       }
     );
   }

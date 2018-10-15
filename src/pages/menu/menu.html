@@ -14,5 +14,17 @@
 </ion-header>
 
 <ion-content padding>
+	<ion-card *ngFor="let dish of dishes">
+		<img src="{{DbURL + dish.image}}">
+		<ion-card-content>
+			<ion-card-title>
+				{{dish.name}}
+			</ion-card-title>
+			<p>
+				{{dish.description}}
+
+			</p>
+		</ion-card-content>
+	</ion-card>
 
 </ion-content>
