@@ -1,7 +1,7 @@
 export interface Leader{
 
 id: number;
-name:strin;
+name:string;
 image:string;
 designation:string;
 abbr:string;
